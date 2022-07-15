@@ -116,7 +116,7 @@ function array_dot_set(array $array, string $path, $value) : array
  *
  * @return mixed
  */
-function array_dot_get(array $array, string $path) : mixed
+function array_dot_get(array $array, string $path)
 {
     if (\count($array) === 0) {
         throw new InvalidPathException(
@@ -328,7 +328,7 @@ function array_dot_exists(array $array, string $path) : bool
         array_dot_get($array, $path);
 
         return true;
-    } catch (InvalidPathException) {
+    } catch (InvalidPathException $exception) {
         return false;
     }
 }
